@@ -12,6 +12,6 @@ public class Bootstrap {
 		setPort(8080); 
 		get("/mainFiles", "application/json", (req, res) -> service.listFiles("src/main/resources/public/"));
 
-		get("/directory/:dir", "application/json", (req, res) -> service.listFiles("src/main/resources/public/" + req.params(":dir") + "/"));
+		get("/directory/*", "application/json", (req, res) -> service.listFiles("src/main/resources/public/", req.splat()));
 	}
 }

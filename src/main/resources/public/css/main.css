@@ -3,6 +3,10 @@ body {
 	padding-bottom : 30px;
 }
 
-.theme-showcase .navbar .container {
+.theme-showcase .navbar .container{
 	width : auto;
+}
+
+td:hover {
+	background color: #ccbfbf;
 }

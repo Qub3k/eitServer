@@ -7,7 +7,7 @@
     		controllerAs: 'list',
     		templateUrl: '/views/files.html'
     	})
-    	.when('/directory/:dir', {
+    	.when('/directory/:directoryPath*', {
     		controller: 'DirContentCtrl',
     		controllerAs: 'dir',
     		templateUrl: '/views/files.html'
@@ -30,7 +30,7 @@
 	app.controller('DirContentCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
 		$scope.files = [];
 		$scope.files.length = 0;
-		$http.get('/directory/' + $routeParams.dir)
+		$http.get('/directory/' + $routeParams.directoryPath)
 			.success(function (data) {
 				$scope.files = data;
 			})
