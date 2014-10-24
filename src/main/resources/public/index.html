@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="server">
 <head>
+	<base href="/">
 	<meta charset="utf-8">
 	<title>eitServer</title>
 	<link rel="stylesheet" href="/css/bootstrap.css">
@@ -42,7 +43,9 @@
 			<h1>Files</h1>
 		</div>
 		
-		<div ng-view></div>	
+		<div class="container" ng-view>
+			
+		</div>	
 	</div>
 
 <script src="/js/jquery.js"></script>

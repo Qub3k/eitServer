@@ -11,13 +11,13 @@
 	<tbody>
 		<tr ng-repeat="file in files track by file.name">
 			<td ng-if="file.isDir != true">{{file.name}}</td>
-			<td ng-if="file.isDir == true"><a href="{{file.path}}">{{file.name}}</a></td>
+			<td ng-if="file.isDir == true"><a href="/directory/{{file.path}}">{{file.name}}</a></td>
 			<td>{{file.path}}</td>
 			<td>{{file.size}}</td>
 			<td>{{file.lastMod}}</td>
 			<td>{{file.isDir}}</td>
 			<td>
-				<a ng-show="!{{file.isDir}}" type="button" class="btn btn-sm btn-default" href="{{file.path}}" download>
+				<a ng-show="!{{file.isDir}}" type="button" class="btn btn-sm btn-default" href="/{{file.path}}" download>
 					Download
 				</a>
 			</td>

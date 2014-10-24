@@ -22,6 +22,8 @@ public class Service {
 	public String listFiles(String path) {
 		myFiles.clear();
 		inputFile = new File(path);
+		// Next line is only for debugging properties
+		// System.out.println(inputFile.getAbsolutePath());
 		listAllFiles(inputFile);
 		String json = toJson(myFiles);
 		return json;
