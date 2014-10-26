@@ -24,18 +24,22 @@
     	    $scope.files = data;
     	}).error(function (data, status) {
     	    console.log('Error ' + data)
-    	})
+    	});
+
+    	$scope.downloadFile = function (path) {
+			$http.get('/' + path);
+		}
     });
 
-	app.controller('DirContentCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+	app.controller('DirContentCtrl', ['$scope', '$http', '$routeParams', '$location', function($scope, $http, $routeParams, $location) {
 		$scope.files = [];
-		$scope.files.length = 0;
+		$scope.files.length = 0; 
 		$http.get('/directory/' + $routeParams.directoryPath)
 			.success(function (data) {
 				$scope.files = data;
 			})
 			.error(function (data, status) {
 				console.log('Error ' + data);
-			})
+			});
 	}]);
 }) ();
